@@ -1,32 +1,24 @@
 import React,{Component} from "react";
 import SearchBar from "./searchBar/Searchbar";
-import Modal from "./modal/Modal";
-
+import Loader from "./loader/Loader";
+import ImageGallery from "./imageGallery/ImageGallery";
 
 export default class App extends Component {
   state = {
-    imageList: [],
     searchQuery:"",
-    showModal:false,
+    }
+
+  handleFormSubmit = searchQuery => {
+    this.setState({ searchQuery })
   }
-  toggleModal = () => {
-    this.setState(({showModal}) => ({
-    showModal:!showModal,
-  }))
-}
 
   render() {
-    const { showModal } = this.state;
+    const { searchQuery } = this.state;
     return (
       <>
-        <button type="button" onClick={this.toggleModal}>open modal</button>
-    <SearchBar />
-        {showModal && (
-          <Modal
-            onClose={this.toggleModal}
-          />
-        )}    
-    
+        <SearchBar onSubmit={this.handleFormSubmit }/>
+        <ImageGallery query={searchQuery}/>
+        <Loader/>
     </>
     )
   }

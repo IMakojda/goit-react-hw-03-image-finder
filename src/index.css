@@ -152,7 +152,7 @@ img {
 
 .ImageGalleryItem-image:hover {
   transform: scale(1.03);
-  cursor: zoom-in;
+  /* cursor: zoom-in; */
 }
 
 /*
@@ -204,4 +204,11 @@ img {
 .Button:hover,
 .Button:focus {
   background-color: #303f9f;
+}
+
+/* Стили компонента Loader */
+div[data-testid='ball-triangle-loading'] {
+  margin: 150px auto;
+  justify-content: center;
+  align-items: center;
 }

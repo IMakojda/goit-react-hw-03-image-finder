@@ -5,7 +5,9 @@ class SearchForm extends Component {
     image: [],
     searchQuery: "",
   }
+  componentDidMount() {
 
+  }
   render() {
     return (
       <form className="searchForm">
