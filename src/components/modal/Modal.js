@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { createPortal } from "react-dom";
 
 const modalRoot = document.querySelector('#modal-root')
+
 export default class Modal extends Component {
 
   componentDidMount() {
@@ -29,14 +30,9 @@ export default class Modal extends Component {
       <div className="overlay" onClick={this.handleBackDropClick}>
         <div className="modal">
           {this.props.children}
-          {/* <img src="" alt="" /> */}
         </div>
       </div>,
       modalRoot
     )
-
-
-
   }
-
 }

@@ -5,12 +5,11 @@ class SearchForm extends Component {
     image: [],
     searchQuery: "",
   }
-  componentDidMount() {
 
-  }
   render() {
     return (
       <form className="searchForm">
+
         <button type="submit" className="searchForm-button">
           <span className="searchForm-button-label">Search</span>
         </button>
@@ -22,6 +21,7 @@ class SearchForm extends Component {
           autoFocus
           placeholder="Search images and photos"
         />
+
       </form>
     )
   }

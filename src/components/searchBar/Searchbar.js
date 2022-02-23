@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { toast } from 'react-toastify';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 class SearchBar extends Component {
   state = {
@@ -11,12 +11,16 @@ class SearchBar extends Component {
   }
 
   handleSubmit = e => {
-    e.preventDefault();
-    if (this.state.searchQuery.trim() === "") {
-      return toast.error("Введити слово для поиска")
+    const { searchQuery } = this.state
+    e.preventDefault()
+
+    if (searchQuery.trim() === '') {
+      Notify.warning("No words to search.")
+      return
     }
-    this.props.onSubmit(this.state.searchQuery);
-    this.setState({ searchQuery: "", })
+
+    this.props.onSubmit(searchQuery);
+    this.setState({ searchQuery: '' })
   }
 
   render() {
