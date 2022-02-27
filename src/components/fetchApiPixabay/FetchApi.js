@@ -7,7 +7,6 @@ const BASE_url = "https://pixabay.com/api/"
 async function ApiImages(searchQuery, page, perPage) {
   const url = `${BASE_url}?key=${API_key}&q=${searchQuery}&image_type=photo&page=${page}&per_page=${perPage}`;
   const imagesList = await axios.get(url);
-  console.log(imagesList.data);
   return imagesList.data;
 }
 

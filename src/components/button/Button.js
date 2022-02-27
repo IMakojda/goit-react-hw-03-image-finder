@@ -12,4 +12,5 @@ export default Button;
 Button.propTypes = {
   handleLoadBtn: PropTypes.func.isRequired,
   nameClas: PropTypes.string.isRequired,
+  children: PropTypes.node,
 };
